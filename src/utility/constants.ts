@@ -1,0 +1,1 @@
+export const DB_Name= "Skill-Up-LMS-Project"; 
