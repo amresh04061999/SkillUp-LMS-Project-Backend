@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
-import { DB_Name } from "../constants";
-
+import { DB_Name } from "../utility/constants";
+import dotenv from "dotenv"
+dotenv.config({path:'./.env'})
   const connectDB = async () =>{
     try {
          const connectionInstance= await mongoose.connect(`${process.env.MONGODB_URL}/${DB_Name}`) ;
@@ -8,9 +9,7 @@ import { DB_Name } from "../constants";
          
     } catch (error) {
            console.log("DataBase connection fail",error);
-           throw error
+           throw error;
     }
   }
 export default connectDB
-
-
